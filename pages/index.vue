@@ -10,7 +10,7 @@
                 <h2 class="text-xl">Personal Info</h2>
                 <p><strong>Email:</strong> eversonaraujo9@gmail.com</p>
                 <p><strong>Address:</strong> Brazil, Brasília, Distrito Federal</p>
-                <a href="https://www.linkedin.com/in/everson-ara%C3%BAjo-34524b58/"
+                <a :href="linkedin"
                     class="bg-blue-500 p-1 px-2 inline-block mt-2 text-sm rounded-full" target="_blank">
                     Linkedin
                 </a>
@@ -38,7 +38,7 @@
             
             <div class="mt-5 bg-white text-gray-700 p-7 rounded md:shadow">
                 <span class="text-xs bold text-black bg-green-300 p-1 px-2 uppercase rounded-full">Graduated as</span>
-                <h2 class="text-xl text-blue-800 mt-2">Analist and Developer of Software</h2>
+                <h2 class="text-xl text-blue-800 mt-2">Software Analyst and Development</h2>
                 <p class="text-sm">Conclusion 2015, Centro Universitário IESB - Brasília-DF</p>
             </div>
 
@@ -48,14 +48,14 @@
                 role="Designer"
                 company="Photoimage"
                 time="about 3 years"
-                activities="Printing preparation, working with photoshop, illustrator, etc"
+                activities="Printing preparation, working with photoshop, illustrator, etc."
             />
             
             <job-info 
                 role="Software Development"
                 company="Quantico"
-                time="7 years, from 2015 til october 2021"
-                activities="On main time I worked with PHP, Symfony, Doctrine and Vuejs,
+                time="From 2015 to October 2021"
+                activities="Most of the time I worked with PHP, Symfony, Doctrine and Vuejs,
                     but somethimes Wordpress, creating Landing Pages,
                     setuping up Ubuntu's server on Digital Ocean."
 
@@ -77,19 +77,44 @@
                         link: 'https://nullar.com.br',
                         architecture: 'Symfony REST API, and Reactjs',
                         desc: 'Schedule services for assembly mobles.'
+                    },
+                    { 
+                        name: 'Milk LP',
+                        link: 'https://milkclub.me/',
+                        architecture: 'Landing Page, responsive LP with Bootstrap',
+                        desc: 'Rent cows to sell milk, I also developed I backend with but is privated to assigners/'
                     }
                 ]"
-            />
+            >   
+                <a  :href="linkedin" target="_blank" 
+                    class="bg-gray-300 rounded inline-block mt-4 text-sm p-2 px-4">
+                        See more on Linkedin
+                </a>
+            </job-info>
 
              <job-info 
                 role="Software Development Front-end"
                 company="GestãoClick"
-                time="current, since november 2021"
-                activities="Working by squads, using Atrassian Jira, recreating pages with Vuejs"
+                time="Since November 2021"
+                activities="Working by squads, using Atrassian Jira, recreating pages with Vuejs."
             />
         </div>
     </div>
 </template>
+
+<script>
+import { defineComponent } from '@vue/composition-api'
+
+export default defineComponent({
+    setup() {},
+    data () {
+        return {
+            linkedin: 'https://www.linkedin.com/in/everson-ara%C3%BAjo-34524b58/'
+        }
+    }
+})
+</script>
+
 
 <style>
     html, body, #__nuxt { min-height: 100vh; } 
