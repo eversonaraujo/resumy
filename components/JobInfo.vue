@@ -5,7 +5,6 @@
         <p><strong>Activities: </strong>{{ activities }}</p>
         <p><strong>Time: </strong>{{ time }} </p>
 
-
         <h2 v-if="projects.length" class="text-xl mt-5 mb-3">Projects</h2>
         <div v-for="p, index in projects" :key="index" class="mt-5 mb-3 border-l-4 pl-5 ">
             <a :href="p.link" target="_blank" 
@@ -18,7 +17,8 @@
             <p>{{ p.architeccture }}</p>
             <p class="text-sm">{{ p.desc }}</p>
         </div>
-
+        <slot></slot>
+        
     </div>
 </template>
 

@@ -82,7 +82,7 @@
                         name: 'Milk LP',
                         link: 'https://milkclub.me/',
                         architecture: 'Landing Page, responsive LP with Bootstrap',
-                        desc: 'Rent cows to sell milk, I also developed I backend with but is privated to assigners/'
+                        desc: 'Rent cows to sell milk, I also developed I backend with but is privated to assigners.'
                     }
                 ]"
             >   
