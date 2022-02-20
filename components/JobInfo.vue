@@ -1,9 +1,9 @@
 <template>
     <div class="mt-5 bg-white text-gray-700 p-7 rounded shadow">
         <h2 class="text-xl text-blue-800 mb-3">{{ company }}</h2>
-        <p><strong>Role: </strong>{{ role }}</p>
-        <p><strong>Activities: </strong>{{ activities }}</p>
-        <p><strong>Time: </strong>{{ time }} </p>
+        <p><strong>{{ lang.role }}: </strong>{{ role }}</p>
+        <p><strong>{{ lang.activities }}: </strong>{{ activities }}</p>
+        <p><strong>{{ lang.time }}: </strong>{{ time }} </p>
 
         <h2 v-if="projects.length" class="text-xl mt-5 mb-3">Projects</h2>
         <div v-for="p, index in projects" :key="index" class="mt-5 mb-3 border-l-4 pl-5 ">
@@ -26,12 +26,16 @@
 import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
+    inject: {
+        lang: { default: { role: 'Role', activities: 'Activities', time: 'Time'}}
+    },
     props: {
         role: '',
         time: '',
         company: '',
         activities: '',
-        projects: { type: Array, default: [] }
+        projects: { type: Array, default: [] },
+        //lang: { default: { role: 'Role', activities: 'Activities', time: 'Time'}}
     }
 })
 </script>

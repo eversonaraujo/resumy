@@ -1,36 +1,43 @@
 <template>
     <div class="bg-gray-100 md:grid md:grid-cols-3">
+        <idiom />
         <div class="text-white bg-gray-600">
-            <div class="md:max-h-screen w-full p-7 md:p-10 md:static md:overflow-y-auto">           
-                <div class="mb-5">
+            <div class="md:max-h-screen w-full md:static md:overflow-y-auto">           
+                
+                <div class="bg-indigo-700 p-7 md:p-10">
                     <h1 class="text-2xl bold uppercase">Everson Araújo Barbosa</h1>
                     <p>Fullstack developer PHP, Vuejs...</p>
                 </div>
 
-                <h2 class="text-xl">Personal Info</h2>
-                <p><strong>Email:</strong> eversonaraujo9@gmail.com</p>
-                <p><strong>Address:</strong> Brazil, Brasília, Distrito Federal</p>
-                <a :href="linkedin"
-                    class="bg-blue-500 p-1 px-2 inline-block mt-2 text-sm rounded-full" target="_blank">
-                    Linkedin
-                </a>
+                <div class="p-7 md:p-10">                 
+                    <h2 class="text-xl">Personal Info</h2>
+                    <p><strong>Email:</strong> eversonaraujo9@gmail.com</p>
+                    <p><strong>Address:</strong> Brazil, Brasília, Distrito Federal</p>
+                    <a :href="linkedin"
+                        class="bg-blue-500 p-1 px-2 inline-block mt-2 text-sm rounded-full" target="_blank">
+                        Linkedin
+                    </a>
 
-                <card-info title="Basics" :items="['HTML5, SEO, CSS3, SCSS, Bootstrap, Tailwind, etc.']" />
+                    <card-info title="Basics" :items="['HTML5, SEO, CSS3, SCSS, Bootstrap, Tailwind, etc.']" />
+                    
+                    <card-info title="Languages" :items="[
+                        'PHP <i>(Zend, Symfony)</i>',
+                        'Golang',
+                        'Javascript <i>(Jquery, Vuejs, Reactjs, Nextjs, Nuxtjs)</i>',
+                        'Java <i>(SpringMVC, Hibernate, Android)</i>']" 
+                    />
+                    
+                    <card-info title="Databases" :items="['MySQL', 'PostgreSQL', 'SQLite']" />
+                    
+                    <card-info title="MessageBroker, and others" :items="['RabbitMQ', 'Redis']" />
+                    
+                    <card-info title="DevOps" :items="['Ubuntu, Apache, Cron jobs', 'Docker and Docker Compose', 'Git', 'Jenking (<i class=\'text-sm\'>Learning</i>)']" />
+                    
+                    <card-info title="Cloud" :items="['Digital Ocean']" />
+                    
+                    <card-info title="Next Goals" :items="['Laravel, React Native, Kubernets']" />
                 
-                <card-info title="Languages" :items="[
-                    'PHP <i>(Zend, Symfony)</i>',
-                    'Javascript <i>(Jquery, Vuejs, Reactjs, Nextjs, Nuxtjs)</i>',
-                    'Java <i>(SpringMVC, Hibernate, Android)</i>']" 
-                />
-                
-                <card-info title="Databases" :items="['MySQL', 'PostgreSQL', 'SQLite']" />
-                
-                <card-info title="DevOps" :items="['Ubuntu, Apache, Cron jobs', 'Docker and Docker Compose', 'Git', 'Jenking (<i class=\'text-sm\'>Learning</i>)']" />
-                
-                <card-info title="Cloud" :items="['Digital Ocean']" />
-                
-                <card-info title="Next Goals" :items="['Laravel, React Native, Kubernets']" />
-            
+                </div>
             </div>
         </div>
         <div class="col-span-2 h-auto md:max-h-screen w-full p-7 md:p-10 md:static md:overflow-y-auto">           

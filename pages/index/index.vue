@@ -1,0 +1,130 @@
+<template>
+    <div class="bg-gray-100 md:grid md:grid-cols-3">
+        <idiom />
+        <div class="text-white bg-gray-600">
+            <div class="md:max-h-screen w-full md:static md:overflow-y-auto">           
+                <div class="bg-indigo-700 p-7 md:p-10">
+                    <h1 class="text-2xl bold uppercase">Everson Araújo Barbosa</h1>
+                    <p>Desenvolvedor Fullstack</p>
+                </div>
+
+                <div class="p-7 md:p-10">                 
+
+                    <h2 class="text-xl">Informações Pessoais</h2>
+                    <p><strong>E-mail:</strong> eversonaraujo9@gmail.com</p>
+                    <p><strong>Endereço:</strong> Brasil, Brasília, Distrito Federal</p>
+                    <a :href="linkedin"
+                        class="bg-blue-500 p-1 px-2 inline-block mt-2 text-sm rounded-full" target="_blank">
+                        Linkedin
+                    </a>
+
+                    <card-info title="Básico" :items="['HTML5, SEO, CSS3, SCSS, Bootstrap, Tailwind, etc.']" />
+                    
+                    <card-info title="Linguagens" :items="[
+                        'PHP <i>(Zend, Symfony)</i>',
+                        'Golang',
+                        'Javascript <i>(Jquery, Vuejs, Reactjs, Nextjs, Nuxtjs)</i>',
+                        'Java <i>(SpringMVC, Hibernate, Android)</i>']" 
+                    />
+                    
+                    <card-info title="Bancos de dados" :items="['MySQL', 'PostgreSQL', 'SQLite']" />
+                    
+                    <card-info title="Gerenciador de Filas, e outros" :items="['RabbitMQ', 'Redis']" />
+                    
+                    <card-info title="DevOps" :items="['Ubuntu, Apache, Cron jobs', 'Docker and Docker Compose', 'Git', 'Jenking (<i class=\'text-sm\'>Learning</i>)']" />
+                    
+                    <card-info title="Cloud" :items="['Digital Ocean']" />
+                    
+                    <card-info title="Próximos Objetivos" :items="['Laravel, React Native, Kubernets']" />
+                
+                </div>
+            </div>
+        </div>
+        <div class="col-span-2 h-auto md:max-h-screen w-full p-7 md:p-10 md:static md:overflow-y-auto">           
+            <h2 class="text-2xl bolder uppercase">Graduação</h2>
+            
+            <div class="mt-5 bg-white text-gray-700 p-7 rounded md:shadow">
+                <span class="text-xs bold text-black bg-green-300 p-1 px-2 uppercase rounded-full">Graduado como</span>
+                <h2 class="text-xl text-blue-800 mt-2">Analista e Desenvolvedor de Software</h2>
+                <p class="text-sm">Concluído em 2015, no Centro Universitário IESB - Brasília-DF</p>
+            </div>
+
+            <h2 class="mt-7 text-2xl bolder uppercase">Histórico Profissional</h2>
+
+            <job-info 
+                role="Designer"
+                company="Photoimage"
+                time="cerca de 3 anos"
+                activities="Preparação de arquivos para impressão, com CorelDraw, Photoshop, illustrator, etc."
+            />
+            
+            <job-info 
+                role="Desenvolvedor de Software"
+                company="Quantico"
+                time="De 2015 até Outubro de 2021"
+                activities="A maior parte do tempo eu trabalhei com PHP, Symfony, Doctrine and Vuejs,
+                    as vezes com Wordpress, criação de Landing Pages, e
+                    configuração e servidor Ubuntu na Digital Ocean."
+
+                :projects="[
+                    { 
+                        name: 'Nicolandia - Sistema de Pagamento',
+                        link: 'https://pague.yuupe.com', 
+                        architecture: 'Symfony RestAPI, com Nuxtjs',
+                        desc: 'Sistema de pagamento, bilheteria online, integração com APIs (Wirecard, Pagar.me, Iugu).'
+                    },
+                    { 
+                        name: 'Yuupe Landing Pages',
+                        link: 'https://yuupe.com',
+                        architecture: 'Symfony REST API, and Vuejs',
+                        desc: 'App para criar LPs, lista de automação, email marketing usando Sendgrid API.'
+                    },
+                    { 
+                        name: 'Nullar',
+                        link: 'https://nullar.com.br',
+                        architecture: 'Symfony REST API, and Reactjs',
+                        desc: 'Agendamento de serviço de montagem de móveis.'
+                    },
+                    { 
+                        name: 'Milk LP',
+                        link: 'https://milkclub.me/',
+                        architecture: 'Landing Page responsiva com Bootstrap',
+                        desc: 'Aluguel de vacas para venda de leite, Eu também desenvolvi o backend para os assinantes.'
+                    }
+                ]"
+            >   
+                <a  :href="linkedin" target="_blank" 
+                    class="bg-gray-300 rounded inline-block mt-4 text-sm p-2 px-4">
+                        Veja mais no Linkedin
+                </a>
+            </job-info>
+
+             <job-info 
+                role="Desenvolvedor de Software"
+                company="GestãoClick"
+                time="Desde Novembro de 2021"
+                activities="Criação de páginas com Vuejs, e integração com API. Trabalhando por squads, usando Atrassian Jira."
+            />
+        </div>
+    </div>
+</template>
+
+<script>
+import { defineComponent } from '@vue/composition-api'
+
+export default defineComponent({
+    data () {
+        return {
+            linkedin: 'https://www.linkedin.com/in/everson-ara%C3%BAjo-34524b58/'
+        }
+    },
+    provide: {
+        lang: { role: 'Cargo', activities: 'Atividades', time: 'Tempo' }
+    }
+})
+</script>
+
+
+<style>
+    html, body, #__nuxt { min-height: 100vh; } 
+</style>

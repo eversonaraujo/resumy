@@ -12,8 +12,8 @@ import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
     props: {
-        title: '',
-        items: []
+        title: { type: String , default: '' },
+        items: { type: Array, default: [] }
     }
 })
 </script>
